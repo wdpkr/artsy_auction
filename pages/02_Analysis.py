@@ -176,7 +176,7 @@ with st.echo(code_location='below'):
                  labels= {'name': 'Artist\'s name', 'price_usd': 'Volume of art sold, USD'})
     st.plotly_chart(fig)
 
-    st.write('Who\'s artwork dimensions are the largest?')
+    st.write('Whose artwork dimensions are the largest?')
 
     data_artists = pd.DataFrame(df.groupby('name').median().sort_values(by = 'area', ascending = False)[:25]['area']).reset_index()
     fig = px.bar(data_artists, x='name', y='area', title='Top 25 artists by median artwork size in the sample',
